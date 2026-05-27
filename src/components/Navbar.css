@@ -38,6 +38,12 @@
   gap: 1rem;
 }
 
+.nav-logo-img {
+  height: 48px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .harvard-shield {
   width: 32px;
   height: 36px;

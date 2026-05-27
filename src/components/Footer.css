@@ -75,6 +75,12 @@
   gap: 1rem;
 }
 
+.footer-logo-img {
+  height: 80px;
+  max-width: 100%;
+  object-fit: contain;
+}
+
 .footer-harvard-logo .logo-text {
   display: flex;
   flex-direction: column;

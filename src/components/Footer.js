@@ -42,11 +42,7 @@ const Footer = () => {
         {/* Middle Section - Logo */}
         <div className="footer-logo-section">
           <Link to="/" className="footer-harvard-logo">
-            <div className="logo-text">
-              <h1>BINARY</h1>
-              <span>Blooms</span>
-            </div>
-            <div className="footer-harvard-shield">AI<br/>ML<br/>DL</div>
+            <img src="/logo.png" alt="Binary Blooms" className="footer-logo-img" />
           </Link>
         </div>
 

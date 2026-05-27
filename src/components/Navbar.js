@@ -24,11 +24,7 @@ const Navbar = () => {
         <div className="nav-container">
           <div className="logo-section">
             <Link to="/" className="harvard-logo" onClick={() => { setIsMenuOpen(false); setIsSearchOpen(false); }}>
-              <div className="harvard-shield">AI<br/>ML<br/>DL</div>
-              <div className="logo-text">
-                <h1>BINARY</h1>
-                <span>Blooms</span>
-              </div>
+              <img src="/logo.png" alt="Binary Blooms" className="nav-logo-img" />
             </Link>
             {!isMenuOpen && !isSearchOpen && (
               <div className="nav-announcement">
