@@ -1,0 +1,96 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:wght@400;600;700&family=Crimson+Text:wght@400;600;700&display=swap');
+
+:root {
+  /* Colors */
+  --primary-color: #A51C30; /* Harvard Crimson */
+  --bg-color-dark: #000000;
+  --text-color-dark: #ffffff;
+  --navbar-bg: #111111;
+  --border-color: #333333;
+
+  /* Typography */
+  --font-body: 'Inter', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-crimson: 'Crimson Text', serif;
+
+  /* Spacing */
+  --spacing-sm: 0.5rem;
+  --spacing-md: 1rem;
+  --spacing-lg: 2rem;
+  --spacing-xl: 4rem;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-color-dark);
+  color: var(--text-color-dark);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 700;
+}
+
+a {
+  text-decoration: none;
+  color: inherit;
+}
+
+ul {
+  list-style: none;
+}
+
+.page-wrapper {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+}
+
+/* Base button styles */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.75rem 1.5rem;
+  border-radius: 999px;
+  font-family: var(--font-body);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  border: none;
+  background: transparent;
+  color: white;
+}
+
+.btn:hover {
+  opacity: 0.8;
+}
+
+/* Circular Icon Button Helper */
+.icon-circle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: white;
+  color: black;
+  transition: transform 0.2s ease;
+}
+
+.btn:hover .icon-circle {
+  transform: translateX(4px);
+}

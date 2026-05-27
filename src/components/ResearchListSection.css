@@ -1,0 +1,86 @@
+.research-list-section {
+  background-color: #f3f3f3; /* Matches previous section's light background */
+  padding: 0 0 5rem 0; /* No top padding as it flows from the previous section */
+  width: 100%;
+}
+
+.research-list-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+.research-item {
+  display: flex;
+  align-items: flex-start;
+  padding: 3rem 0;
+  border-top: 1px solid #ccc;
+  gap: 3rem;
+  transition: background-color 0.2s;
+  cursor: pointer;
+}
+
+.research-item:hover {
+  background-color: rgba(0,0,0,0.02);
+}
+
+.research-item:last-child {
+  border-bottom: 1px solid #ccc; /* Match the top border of the first item for symmetry, or just leave it */
+}
+
+/* Three columns layout */
+.research-col-title {
+  flex: 0 0 30%;
+}
+
+.research-col-title h3 {
+  font-family: var(--font-body);
+  font-size: 1.3rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.research-col-desc {
+  flex: 1;
+}
+
+.research-col-desc p {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: #333;
+  line-height: 1.6;
+  margin: 0;
+  max-width: 90%;
+}
+
+.research-col-img {
+  flex: 0 0 auto;
+}
+
+.research-thumbnail {
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+  display: block;
+  background-color: #ddd;
+}
+
+@media (max-width: 992px) {
+  .research-item {
+    flex-direction: column;
+    gap: 1.5rem;
+    padding: 2rem 0;
+  }
+  
+  .research-col-title, .research-col-desc {
+    flex: none;
+    width: 100%;
+  }
+  
+  .research-col-desc p {
+    max-width: 100%;
+  }
+}

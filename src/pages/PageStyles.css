@@ -1,0 +1,51 @@
+.page-container {
+  padding: 4rem 2rem;
+  min-height: calc(100vh - 80px);
+}
+
+.page-title {
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.course-details {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.description {
+  font-size: 1.1rem;
+  color: #cbd5e1;
+  margin-bottom: 2rem;
+  line-height: 1.8;
+}
+
+.meta-info {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 1.5rem;
+  margin-top: 2rem;
+  border-top: 1px solid var(--glass-border);
+  padding-top: 2rem;
+}
+
+.meta-item {
+  background: rgba(255, 255, 255, 0.03);
+  padding: 1rem;
+  border-radius: 8px;
+}
+
+.meta-item strong {
+  display: block;
+  color: var(--accent-color);
+  margin-bottom: 0.5rem;
+}
+
+.loader {
+  text-align: center;
+  font-size: 1.2rem;
+  color: var(--secondary-color);
+  margin-top: 4rem;
+  animation: pulse 1.5s infinite;
+}

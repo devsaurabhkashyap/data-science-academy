@@ -1,0 +1,142 @@
+.video-section {
+  background-color: #f3f3f3; /* Matches the light background */
+  padding: 6rem 0;
+  width: 100%;
+}
+
+.video-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+  display: flex;
+  align-items: center;
+  gap: 4rem;
+}
+
+/* Left Column - Text Content */
+.video-text-content {
+  flex: 1;
+  max-width: 500px;
+}
+
+.video-text-content h2 {
+  font-family: var(--font-serif);
+  font-size: 3.5rem;
+  font-weight: 400;
+  color: #111;
+  line-height: 1.1;
+  margin-bottom: 1.5rem;
+}
+
+.video-text-content p {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: #333;
+  line-height: 1.6;
+  margin-bottom: 2rem;
+  font-weight: 500;
+}
+
+.fay-prize-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 1rem;
+  background: transparent;
+  border: none;
+  color: #111;
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 1rem;
+  cursor: pointer;
+  padding: 0;
+}
+
+.fay-prize-btn .black-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 32px;
+  height: 32px;
+  background-color: #111;
+  color: white;
+  border-radius: 50%;
+  transition: transform 0.2s;
+}
+
+.fay-prize-btn:hover .black-circle {
+  transform: scale(1.1);
+}
+
+/* Right Column - Video Player */
+.video-player-wrapper {
+  flex: 1.2;
+  position: relative;
+  background-color: #000;
+  border-radius: 4px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0,0,0,0.2);
+  aspect-ratio: 16 / 9;
+}
+
+.html5-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Video Overlay */
+.video-overlay {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 2rem;
+  background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, transparent 100%);
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  z-index: 10;
+  transition: opacity 0.3s;
+}
+
+.video-overlay.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.play-btn-circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 48px;
+  height: 48px;
+  background-color: var(--primary-color); /* Crimson */
+  color: white;
+  border-radius: 50%;
+  border: 2px solid white;
+  cursor: pointer;
+  transition: transform 0.2s, background-color 0.2s;
+}
+
+.play-btn-circle:hover {
+  transform: scale(1.05);
+  background-color: #8a1728;
+}
+
+.video-overlay-text {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: white;
+  font-weight: 400;
+  cursor: pointer;
+}
+
+@media (max-width: 992px) {
+  .video-container {
+    flex-direction: column;
+  }
+  .video-player-wrapper {
+    width: 100%;
+  }
+}
