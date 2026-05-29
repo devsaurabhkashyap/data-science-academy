@@ -1,6 +1,6 @@
 .footer-section {
-  background-color: #111111; /* Very dark background */
-  color: #ccc;
+  background-color: #ffffff;
+  color: #555;
   padding: 5rem 0 2rem 0;
   width: 100%;
 }
@@ -11,14 +11,14 @@
   padding: 0 2rem;
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center everything as per the screenshot */
+  align-items: center;
 }
 
 /* Top Section - 3 Columns */
 .footer-links-grid {
   display: flex;
   justify-content: center;
-  gap: 8rem; /* Large gap between the columns */
+  gap: 8rem;
   margin-bottom: 5rem;
   width: 100%;
 }
@@ -26,7 +26,7 @@
 .footer-col {
   display: flex;
   flex-direction: column;
-  align-items: center; /* Center text within the columns */
+  align-items: center;
   text-align: center;
 }
 
@@ -34,7 +34,7 @@
   font-family: var(--font-body);
   font-size: 0.95rem;
   font-weight: 700;
-  color: white;
+  color: #111;
   margin-bottom: 1.5rem;
   text-transform: capitalize;
 }
@@ -51,13 +51,13 @@
 .footer-col ul li a {
   font-family: var(--font-body);
   font-size: 0.9rem;
-  color: #aaa;
+  color: #777;
   text-decoration: none;
   transition: color 0.2s;
 }
 
 .footer-col ul li a:hover {
-  color: white;
+  color: var(--primary-color);
 }
 
 /* Middle Section - Logo */
@@ -76,50 +76,9 @@
 }
 
 .footer-logo-img {
-  height: 80px;
+  height: 100px;
   max-width: 100%;
   object-fit: contain;
-}
-
-.footer-harvard-logo .logo-text {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.footer-harvard-logo .logo-text h1 {
-  font-family: var(--font-crimson);
-  font-size: 2rem;
-  font-weight: 600;
-  letter-spacing: 2px;
-  color: white;
-  margin: 0;
-  line-height: 1;
-}
-
-.footer-harvard-logo .logo-text span {
-  font-family: var(--font-body);
-  font-size: 0.75rem;
-  letter-spacing: 3px;
-  text-transform: uppercase;
-  color: white;
-  margin-top: 0.3rem;
-}
-
-.footer-harvard-shield {
-  width: 36px;
-  height: 42px;
-  background-color: var(--primary-color);
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 0.65rem;
-  font-family: var(--font-body);
-  border-radius: 2px 2px 12px 12px;
-  font-weight: bold;
-  text-align: center;
-  line-height: 1.1;
 }
 
 /* Bottom Section */
@@ -144,7 +103,7 @@
 }
 
 .footer-socials a {
-  color: #aaa;
+  color: #777;
   transition: color 0.2s, transform 0.2s;
   display: flex;
   align-items: center;
@@ -152,7 +111,7 @@
 }
 
 .footer-socials a:hover {
-  color: white;
+  color: var(--primary-color);
   transform: translateY(-2px);
 }
 
