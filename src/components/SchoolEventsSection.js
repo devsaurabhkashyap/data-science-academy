@@ -9,9 +9,9 @@ const SchoolEventsSection = () => {
         
         {/* Header Section */}
         <div className="school-events-header">
-          <h2>AI Hackathons</h2>
+          <h2>Global Hiring & Tech Events</h2>
           <p>
-            Binary Blooms hosts local and global hackathons. Find your nearest community chapter below.
+            Binary Blooms hosts recruitment drives and technical events worldwide. Find your nearest event below.
           </p>
         </div>
 
@@ -23,11 +23,11 @@ const SchoolEventsSection = () => {
           
           {/* Column 1 */}
           <div className="school-events-col">
-            <Link to="#" className="school-link-item">Global Hackathon Online</Link>
-            <Link to="#" className="school-link-item">San Francisco Chapter</Link>
-            <Link to="#" className="school-link-item">London AI Hub</Link>
-            <Link to="#" className="school-link-item">Berlin Dev Days</Link>
-            <Link to="#" className="school-link-item">Bangalore Tech Summit</Link>
+            <Link to="#" className="school-link-item">Global Online Career Fair</Link>
+            <Link to="#" className="school-link-item">San Francisco Tech Hiring</Link>
+            <Link to="#" className="school-link-item">London Finance Recruitment</Link>
+            <Link to="#" className="school-link-item">Berlin Tech Talent Days</Link>
+            <Link to="#" className="school-link-item">Bangalore Enterprise Summit</Link>
           </div>
 
           {/* Column 2 */}

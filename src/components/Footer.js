@@ -11,29 +11,29 @@ const Footer = () => {
         <div className="footer-links-grid">
           
           <div className="footer-col">
-            <h4>Security & Brand</h4>
+            <h4>For Companies</h4>
             <ul>
-              <li><Link to="#">Report Copyright Infringement</Link></li>
-              <li><Link to="#">Report Security Issue</Link></li>
-              <li><Link to="#">Trademark Notice</Link></li>
+              <li><Link to="#">Hire Engineers</Link></li>
+              <li><Link to="#">Corporate Training</Link></li>
+              <li><Link to="#">Host a Hackathon</Link></li>
             </ul>
           </div>
           
           <div className="footer-col">
-            <h4>Website</h4>
+            <h4>For Candidates</h4>
             <ul>
-              <li><Link to="#">Accessibility</Link></li>
-              <li><Link to="#">Digital Accessibility</Link></li>
-              <li><Link to="#">Privacy statement</Link></li>
+              <li><Link to="#">Submit Resume</Link></li>
+              <li><Link to="#">View Job Board</Link></li>
+              <li><Link to="#">Attend Workshops</Link></li>
             </ul>
           </div>
           
           <div className="footer-col">
-            <h4>Get In Touch</h4>
+            <h4>Contact Us</h4>
             <ul>
-              <li><Link to="#">Contact Us</Link></li>
-              <li><Link to="#">Maps & Directions</Link></li>
-              <li><Link to="#">Jobs</Link></li>
+              <li><Link to="#">Sales & Partnerships</Link></li>
+              <li><Link to="#">Support</Link></li>
+              <li><Link to="#">Global Offices</Link></li>
             </ul>
           </div>
 

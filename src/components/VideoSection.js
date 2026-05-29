@@ -27,16 +27,16 @@ const VideoSection = () => {
         
         {/* Left Text Column */}
         <div className="video-text-content">
-          <h2>Building scalable LLM architectures</h2>
+          <h2>Transforming careers in Tech</h2>
           <p>
-            Watch our winning team explain how they built a highly scalable architecture 
-            for deploying Large Language Models during the recent Binary Blooms Hackathon.
+            Watch Sarah, a recent candidate we placed, explain how our technical workshops and 
+            dedicated recruitment team helped her land her dream role as a Senior Engineer at a top startup.
           </p>
           <button className="fay-prize-btn">
             <div className="black-circle">
               <ArrowRight size={16} strokeWidth={2} />
             </div>
-            Explore all past hackathon projects
+            View more candidate success stories
           </button>
         </div>
 
@@ -60,7 +60,7 @@ const VideoSection = () => {
               <Play size={20} fill="currentColor" style={{ marginLeft: '4px' }} />
             </div>
             <span className="video-overlay-text" onClick={handlePlayClick}>
-              Watch the project presentation
+              Watch Sarah's Journey
             </span>
           </div>
         </div>

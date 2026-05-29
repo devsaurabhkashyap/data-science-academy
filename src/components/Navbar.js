@@ -29,7 +29,7 @@ const Navbar = () => {
             {!isMenuOpen && !isSearchOpen && (
               <div className="nav-announcement">
                 <span className="dot"></span>
-                <span>Join our upcoming AI Hackathon this weekend!</span>
+                <span>Join our upcoming Tech Hiring Drive this weekend!</span>
               </div>
             )}
           </div>
@@ -104,12 +104,12 @@ const Navbar = () => {
         <div className="menu-content">
           <div className="menu-left">
             <ul className="main-links">
-              <li><Link to="/trainings" onClick={() => setIsMenuOpen(false)}>Trainings</Link></li>
+              <li><Link to="/find-talent" className="active" onClick={() => setIsMenuOpen(false)}>Find Talent</Link></li>
+              <li><Link to="/job-board" onClick={() => setIsMenuOpen(false)}>Job Board</Link></li>
               <li><Link to="/workshops" onClick={() => setIsMenuOpen(false)}>Workshops</Link></li>
+              <li><Link to="/trainings" onClick={() => setIsMenuOpen(false)}>Trainings</Link></li>
               <li><Link to="/hackathons" onClick={() => setIsMenuOpen(false)}>Hackathons</Link></li>
-              <li><Link to="/mentorship" className="active" onClick={() => setIsMenuOpen(false)}>Mentorship</Link></li>
               <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-              <li><Link to="/blog" onClick={() => setIsMenuOpen(false)}>Blog</Link></li>
             </ul>
           </div>
           <div className="menu-right">
@@ -121,13 +121,13 @@ const Navbar = () => {
             Quick Links <ChevronRight size={14} />
           </div>
           <ul className="footer-links">
-            <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Courses</Link></li>
-            <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Instructors</Link></li>
+            <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Hire Now</Link></li>
+            <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Submit Resume</Link></li>
             <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Events</Link></li>
             <li><Link to="#" onClick={() => setIsMenuOpen(false)}>FAQs</Link></li>
             <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Careers</Link></li>
             <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Contact</Link></li>
-            <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Sponsors</Link></li>
+            <li><Link to="#" onClick={() => setIsMenuOpen(false)}>Corporate Partners</Link></li>
           </ul>
         </div>
       </div>

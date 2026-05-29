@@ -30,17 +30,16 @@ const GradsSection = () => {
 
       {/* Center Content Layer */}
       <div className="grads-center-content">
-        <h2>Meet our Mentors</h2>
+        <h2>Our Successful Placements</h2>
         <p>
-          Explore the profiles of our expert mentors, featuring top industry professionals 
-          from leading tech companies and AI research labs.
+          Meet the top candidates we've recently placed at leading Fortune 500 tech companies and high-growth startups globally.
         </p>
         
         <button className="grads-btn">
           <div className="circle-arrow">
             <ArrowRight size={20} strokeWidth={2} />
           </div>
-          View all AI Mentors
+          View All Placements
         </button>
       </div>
     </section>
