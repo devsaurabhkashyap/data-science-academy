@@ -5,7 +5,7 @@
   align-items: center;
   justify-content: center;
   background-color: #ffffff;
-  padding-top: 80px; /* Offset for navbar */
+  padding-top: 100px; /* Offset for navbar */
 }
 
 .hero-container {
