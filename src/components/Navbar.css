@@ -378,4 +378,16 @@
   .search-input-area {
     height: 70px;
   }
+  .main-links {
+    gap: 1rem;
+  }
+  .main-links li a {
+    font-size: 2rem;
+  }
+  .menu-left {
+    padding: 1rem 1.5rem;
+  }
+  .menu-footer {
+    padding: 1rem 1.5rem;
+  }
 }
