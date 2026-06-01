@@ -11,7 +11,7 @@ const SchoolEventsSection = () => {
         <div className="school-events-header">
           <h2>Global Hiring & Tech Events</h2>
           <p>
-            Binary Blooms hosts recruitment drives and technical events worldwide. Find your nearest event below.
+            Binary hosts recruitment drives and technical events worldwide. Find your nearest event below.
           </p>
         </div>
 

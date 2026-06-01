@@ -58,7 +58,7 @@ const NewsSection = () => {
             />
           </div>
           <div className="featured-category">Upcoming Event</div>
-          <h2 className="featured-headline">Binary Blooms announces Global Tech Hiring Fair 2026</h2>
+          <h2 className="featured-headline">Binary announces Global Tech Hiring Fair 2026</h2>
         </div>
 
         {/* Right Auto-Scrolling News List */}

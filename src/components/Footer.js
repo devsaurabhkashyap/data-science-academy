@@ -42,14 +42,14 @@ const Footer = () => {
         {/* Middle Section - Logo */}
         <div className="footer-logo-section">
           <Link to="/" className="footer-harvard-logo">
-            <img src="/logo.png" alt="Binary Blooms" className="footer-logo-img" />
+            <img src="/Binary.png" alt="Binary" className="footer-logo-img" />
           </Link>
         </div>
 
         {/* Bottom Section - Copyright and Socials */}
         <div className="footer-bottom">
           <div className="footer-copyright">
-            Copyright © 2026 Binary Blooms
+            Copyright © 2026 Binary
           </div>
           
           <div className="footer-socials">
