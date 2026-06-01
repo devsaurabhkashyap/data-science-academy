@@ -84,3 +84,17 @@
     max-width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .research-list-section {
+    padding: 0 0 3rem 0;
+  }
+  .research-item {
+    align-items: center;
+    text-align: center;
+  }
+  .research-thumbnail {
+    width: 100px;
+    height: 100px;
+  }
+}

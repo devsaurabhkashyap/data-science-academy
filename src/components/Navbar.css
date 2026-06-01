@@ -350,3 +350,32 @@
     right: 100px;
   }
 }
+
+@media (max-width: 768px) {
+  .navbar {
+    height: 70px;
+  }
+  .nav-logo-img {
+    height: 50px;
+  }
+  .nav-announcement {
+    display: none;
+  }
+  .search-overlay {
+    width: 100%;
+    right: 0;
+  }
+  .menu-overlay {
+    padding-top: 70px;
+  }
+  .nav-action {
+    padding: 0 1rem;
+    font-size: 0.85rem;
+  }
+  .close-action {
+    padding: 0 1rem;
+  }
+  .search-input-area {
+    height: 70px;
+  }
+}

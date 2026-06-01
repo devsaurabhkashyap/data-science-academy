@@ -114,3 +114,15 @@
     opacity: 0.3; /* Fade images on smaller screens to keep text readable */
   }
 }
+
+@media (max-width: 768px) {
+  .grads-center-content h2 {
+    font-size: 2.5rem;
+  }
+  .scattered-images {
+    display: none;
+  }
+  .grads-section {
+    min-height: 500px;
+  }
+}

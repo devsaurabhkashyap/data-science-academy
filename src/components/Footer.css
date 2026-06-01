@@ -125,4 +125,10 @@
     gap: 1.5rem;
     text-align: center;
   }
+  .footer-section {
+    padding: 3rem 0 1.5rem 0;
+  }
+  .footer-logo-img {
+    height: 100px;
+  }
 }

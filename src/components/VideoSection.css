@@ -140,3 +140,15 @@
     width: 100%;
   }
 }
+
+@media (max-width: 768px) {
+  .video-section {
+    padding: 3rem 0;
+  }
+  .video-text-content h2 {
+    font-size: 2.5rem;
+  }
+  .video-overlay-text {
+    font-size: 1.2rem;
+  }
+}

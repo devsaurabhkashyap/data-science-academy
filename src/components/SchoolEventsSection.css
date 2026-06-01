@@ -89,3 +89,12 @@
     grid-template-columns: 1fr; /* Stack columns on small screens */
   }
 }
+
+@media (max-width: 768px) {
+  .school-events-header h2 {
+    font-size: 2.5rem;
+  }
+  .school-events-section {
+    padding: 3rem 0;
+  }
+}
