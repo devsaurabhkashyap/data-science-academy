@@ -45,7 +45,11 @@ const NewsSection = () => {
   const duplicatedNews = [...sidebarNews, ...sidebarNews];
 
   return (
-    <section className="news-section">
+    <section className="news-section academy-section">
+      <div className="academy-header-container">
+        <h2 className="academy-main-title">Feynapps Academy & HR</h2>
+        <div className="academy-divider"></div>
+      </div>
       <div className="news-container">
         
         {/* Left Featured Article */}
@@ -58,7 +62,7 @@ const NewsSection = () => {
             />
           </div>
           <div className="featured-category">Upcoming Event</div>
-          <h2 className="featured-headline">Binary announces Global Tech Hiring Fair 2026</h2>
+          <h2 className="featured-headline">Feynapps announces Global Tech Hiring Fair 2026</h2>
         </div>
 
         {/* Right Auto-Scrolling News List */}

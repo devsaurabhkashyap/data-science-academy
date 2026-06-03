@@ -4,21 +4,21 @@ import './ResearchListSection.css';
 const researchData = [
   {
     id: 1,
-    title: 'Elite Technical Recruitment',
-    description: "We source, vet, and place top-tier engineering talent in leading software companies worldwide. Our rigorous technical screening ensures only the best candidates make it to your interview table.",
-    image: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=200&h=200&auto=format&fit=crop'
+    title: 'Website Management',
+    description: "We build, optimize, and maintain high-performance websites tailored to your brand. From seamless UX/UI to robust backend architecture, we handle everything so you can focus on growth.",
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=200&h=200&auto=format&fit=crop'
   },
   {
     id: 2,
-    title: 'Corporate Training & Workshops',
-    description: "Upskill your existing workforce with our specialized corporate training programs. We offer intensive workshops in advanced topics like Machine Learning, Cloud Architecture, and DevOps.",
-    image: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=200&h=200&auto=format&fit=crop'
+    title: 'Social Media Management',
+    description: "Amplify your digital presence with our comprehensive social media strategies. We manage content creation, community engagement, and targeted campaigns to build your audience.",
+    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=200&h=200&auto=format&fit=crop'
   },
   {
     id: 3,
-    title: "Hackathon Organization",
-    description: "We organize and host global technical hackathons on behalf of corporate partners to crowdsource innovation and identify rising talent in a competitive environment.",
-    image: 'https://images.unsplash.com/photo-1580489944761-15a19d654956?q=80&w=200&h=200&auto=format&fit=crop'
+    title: "Elite Technical Recruitment",
+    description: "We source, vet, and place top-tier engineering talent in leading software companies worldwide. Our rigorous technical screening ensures only the best candidates make it to your interview table.",
+    image: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=200&h=200&auto=format&fit=crop'
   }
 ];
 

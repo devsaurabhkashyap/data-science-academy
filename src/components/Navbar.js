@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="nav-container">
           <div className="logo-section">
             <Link to="/" className="harvard-logo" onClick={() => { setIsMenuOpen(false); setIsSearchOpen(false); }}>
-              <img src="/Binary.png" alt="Binary" className="nav-logo-img" />
+              <img src="/f.png" alt="Feynapps" className="nav-logo-img" />
             </Link>
             {!isMenuOpen && !isSearchOpen && (
               <div className="nav-announcement">
@@ -78,7 +78,7 @@ const Navbar = () => {
                 <input 
                   type="text" 
                   autoFocus
-                  placeholder="Search Binary" 
+                  placeholder="Search Feynapps" 
                   value={searchQuery}
                   onChange={(e) => setSearchQuery(e.target.value)}
                   className="search-input-field"

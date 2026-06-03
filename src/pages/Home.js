@@ -10,10 +10,13 @@ const Home = () => {
   return (
     <div>
       <HeroSection />
+      {/* Services Section */}
+      <ResearchListSection />
+      
+      {/* Academy & HR Section */}
       <NewsSection />
       <GradsSection />
       <VideoSection />
-      <ResearchListSection />
       <SchoolEventsSection />
     </div>
   );
