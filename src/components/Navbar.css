@@ -63,7 +63,7 @@
 .dot {
   width: 8px;
   height: 8px;
-  background-color: #ff3333;
+  background-color: var(--primary-color);
   border-radius: 50%;
 }
 
