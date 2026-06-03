@@ -1,15 +1,32 @@
 .hero {
+  position: relative;
   width: 100%;
   min-height: 100vh;
+  overflow: hidden;
+  background-color: #ffffff;
+  padding-top: 100px; /* Offset for navbar */
+  display: flex;
+  align-items: center;
+}
+
+.hero-slider-track {
+  display: flex;
+  width: 100%;
+  transition: transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+  align-items: center;
+}
+
+.hero-slide {
+  flex: 0 0 100%;
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #ffffff;
-  padding-top: 100px; /* Offset for navbar */
 }
 
 .hero-container {
   max-width: 1200px;
+  width: 100%;
   margin: 0 auto;
   padding: 4rem 2rem;
   display: grid;
@@ -94,6 +111,65 @@
   box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
+/* Navigation Arrows */
+.hero-nav-arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(255,255,255,0.7);
+  border: 1px solid #ddd;
+  color: #111;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: all 0.3s;
+}
+
+.hero-nav-arrow:hover {
+  background: #ffffff;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.left-arrow {
+  left: 20px;
+}
+
+.right-arrow {
+  right: 20px;
+}
+
+/* Navigation Dots */
+.hero-dots {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  gap: 10px;
+  z-index: 10;
+}
+
+.hero-dot {
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: #ccc;
+  border: none;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.hero-dot.active {
+  background: var(--primary-color);
+  width: 24px;
+  border-radius: 6px;
+}
+
 @media (max-width: 992px) {
   .hero-container {
     grid-template-columns: 1fr;
@@ -120,6 +196,8 @@
   }
   .hero {
     padding-top: 70px;
+    min-height: auto;
+    padding-bottom: 4rem;
   }
   .learn-more-btn {
     font-size: 1rem;
@@ -127,5 +205,8 @@
   }
   .hero-image-content img {
     max-height: 300px;
+  }
+  .hero-nav-arrow {
+    display: none; /* Hide arrows on small mobile to save space */
   }
 }
