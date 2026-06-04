@@ -4,38 +4,28 @@ import './ResearchListSection.css';
 const researchData = [
   {
     id: 1,
-    title: 'Website Management',
+    title: 'Website Management & Development',
     description: "We build, optimize, and maintain high-performance websites tailored to your brand. From seamless UX/UI to robust backend architecture, we handle everything so you can focus on growth.",
-    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=200&h=200&auto=format&fit=crop'
-  },
-  {
-    id: 2,
-    title: 'Social Media Management',
-    description: "Amplify your digital presence with our comprehensive social media strategies. We manage content creation, community engagement, and targeted campaigns to build your audience.",
-    image: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=200&h=200&auto=format&fit=crop'
-  },
-  {
-    id: 3,
-    title: "Elite Technical Recruitment",
-    description: "We source, vet, and place top-tier engineering talent in leading software companies worldwide. Our rigorous technical screening ensures only the best candidates make it to your interview table.",
-    image: 'https://images.unsplash.com/photo-1573497491208-6b1acb260507?q=80&w=200&h=200&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1460925895917-afdab827c52f?q=80&w=600&h=400&auto=format&fit=crop'
   }
 ];
 
 const ResearchListSection = () => {
   return (
-    <section className="research-list-section">
-      <div className="research-list-container">
+    <section className="research-list-section" id="web-management">
+      <div className="research-list-container" style={{ gridTemplateColumns: '1fr' }}>
         {researchData.map((item) => (
-          <div key={item.id} className="research-item">
-            <div className="research-col-title">
-              <h3>{item.title}</h3>
+          <div key={item.id} className="research-item" style={{ flexDirection: 'row', gap: '3rem', alignItems: 'center' }}>
+            <div style={{ flex: 1 }}>
+              <div className="research-col-title">
+                <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{item.title}</h3>
+              </div>
+              <div className="research-col-desc">
+                <p style={{ fontSize: '1.2rem', lineHeight: '1.8' }}>{item.description}</p>
+              </div>
             </div>
-            <div className="research-col-desc">
-              <p>{item.description}</p>
-            </div>
-            <div className="research-col-img">
-              <img src={item.image} alt={item.title} className="research-thumbnail" />
+            <div className="research-col-img" style={{ flex: 1 }}>
+              <img src={item.image} alt={item.title} className="research-thumbnail" style={{ width: '100%', height: 'auto', borderRadius: '12px' }} />
             </div>
           </div>
         ))}

@@ -6,8 +6,8 @@ const heroSlides = [
   {
     id: 1,
     title: "Empowering Your Digital Presence",
-    description: "Feynapps is your partner in comprehensive digital growth. From high-performance websites to elite technical recruitment, we elevate your business.",
-    buttonText: "Explore Our Services",
+    description: "Feynapps is your partner in comprehensive digital growth. From high-performance websites to elite technical training, we elevate your business and your skills.",
+    buttonText: "Explore Web Services",
     image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop"
   },
   {
@@ -19,17 +19,10 @@ const heroSlides = [
   },
   {
     id: 3,
-    title: "Amplify Your Voice",
-    description: "Our comprehensive social media strategies drive engagement, build communities, and convert followers into loyal customers.",
-    buttonText: "Social Media Services",
-    image: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2000&auto=format&fit=crop"
-  },
-  {
-    id: 4,
-    title: "Connecting Top Talent",
-    description: "We are a premier recruitment agency specializing in placing elite candidates. Explore our hiring drives and corporate workshops.",
-    buttonText: "Find Your Next Hire",
-    image: "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=2070&auto=format&fit=crop"
+    title: "Feynapps Academy",
+    description: "Master the skills of tomorrow. Purchase our industry-leading courses and learn directly from top technical experts.",
+    buttonText: "View Courses",
+    image: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?q=80&w=2070&auto=format&fit=crop"
   }
 ];
 
