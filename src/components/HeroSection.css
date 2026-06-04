@@ -4,7 +4,7 @@
   min-height: 100vh;
   overflow: hidden;
   background-color: #ffffff;
-  padding-top: 100px; /* Offset for navbar */
+  padding-top: 120px; /* Offset for taller navbar */
   display: flex;
   align-items: center;
 }
@@ -195,7 +195,7 @@
     gap: 1.5rem;
   }
   .hero {
-    padding-top: 70px;
+    padding-top: 90px;
     min-height: auto;
     padding-bottom: 4rem;
   }
