@@ -42,7 +42,7 @@ const Footer = () => {
         {/* Middle Section - Logo */}
         <div className="footer-logo-section">
           <Link to="/" className="footer-harvard-logo">
-            <img src="/feynapps-logo.png" alt="Feynapps" className="footer-logo-img" />
+            <img src="/feynapps-logo.png?v=2" alt="Feynapps" className="footer-logo-img" />
           </Link>
         </div>
 

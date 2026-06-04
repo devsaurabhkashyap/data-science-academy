@@ -42,7 +42,7 @@
   height: 80px;
   max-width: 100%;
   object-fit: contain;
-  transform: scale(1.6);
+  transform: scale(2.2);
   transform-origin: left center;
 }
 
@@ -359,7 +359,8 @@
   }
   .nav-logo-img {
     height: 50px;
-    transform: scale(1.6);
+    transform: scale(2.2);
+    transform-origin: left center;
   }
   .nav-announcement {
     display: none;

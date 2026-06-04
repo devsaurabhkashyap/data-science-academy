@@ -24,7 +24,7 @@ const Navbar = () => {
         <div className="nav-container">
           <div className="logo-section">
             <Link to="/" className="harvard-logo" onClick={() => { setIsMenuOpen(false); setIsSearchOpen(false); }}>
-              <img src="/feynapps-logo.png" alt="Feynapps" className="nav-logo-img" />
+              <img src="/feynapps-logo.png?v=2" alt="Feynapps" className="nav-logo-img" />
             </Link>
             {!isMenuOpen && !isSearchOpen && (
               <div className="nav-announcement">
