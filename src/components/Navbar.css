@@ -39,11 +39,9 @@
 }
 
 .nav-logo-img {
-  height: 80px;
+  height: 60px;
   max-width: 100%;
   object-fit: contain;
-  transform: scale(2.2);
-  transform-origin: left center;
 }
 
 .nav-announcement {
@@ -358,9 +356,7 @@
     height: 70px;
   }
   .nav-logo-img {
-    height: 50px;
-    transform: scale(2.2);
-    transform-origin: left center;
+    height: 40px;
   }
   .nav-announcement {
     display: none;
