@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
-import { useCart } from '../context/CartContext';
 import { courseCatalog } from './Courses';
 import { MonitorPlay, User, Clock, CheckCircle, X, CheckCircle2 } from 'lucide-react';
 import './CourseDetails.css';
@@ -9,8 +8,8 @@ import './Courses.css'; // Reusing chatbot CSS from here
 const CourseDetails = () => {
   const { courseId } = useParams();
   const navigate = useNavigate();
-  const { addToCart, cartItems } = useCart();
   const [showChatBubble, setShowChatBubble] = useState(true);
+  const [showContactModal, setShowContactModal] = useState(false);
   
   const course = courseCatalog.find(c => c.id === courseId);
 
@@ -23,15 +22,8 @@ const CourseDetails = () => {
     );
   }
 
-  const isCourseInCart = cartItems.some(item => item.id === course.id);
-
-  const handleEarnClick = () => {
-    if (isCourseInCart) {
-      navigate('/cart');
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      addToCart(course);
-    }
+  const handleContactClick = () => {
+    setShowContactModal(true);
   };
 
   return (
@@ -44,9 +36,9 @@ const CourseDetails = () => {
         <div className="edx-breadcrumbs">
           <Link to="/" className="edx-breadcrumb-link">Home</Link>
           <span className="edx-breadcrumb-separator">{'>'}</span>
-          <span className="edx-breadcrumb-link">Certificates</span>
+          <Link to="/courses" className="edx-breadcrumb-link">Certificates</Link>
           <span className="edx-breadcrumb-separator">{'>'}</span>
-          <span className="edx-breadcrumb-link">{course.programType}</span>
+          <Link to="/courses" className="edx-breadcrumb-link">{course.programType}</Link>
           <span className="edx-breadcrumb-separator">{'>'}</span>
           <span className="edx-breadcrumb-current">{course.title}</span>
         </div>
@@ -63,10 +55,10 @@ const CourseDetails = () => {
               <h3 className="edx-details-subtitle">{course.courseCount}, {course.duration.split(' ')[0]} months</h3>
               
               <button 
-                className={`edx-earn-btn ${isCourseInCart ? 'in-cart' : ''}`}
-                onClick={handleEarnClick}
+                className="edx-earn-btn"
+                onClick={handleContactClick}
               >
-                {isCourseInCart ? 'Go to Cart' : 'Earn a certificate'}
+                Contact to buy
               </button>
 
               <label className="edx-opt-in">
@@ -122,10 +114,10 @@ const CourseDetails = () => {
                 <p>Save on new skills with up to 30% off programs. Use code TAKE30OFFEDX26 at checkout. Offer ends Jun 30, 2026. ⓘ</p>
               </div>
               <button 
-                className={`edx-promo-btn ${isCourseInCart ? 'in-cart' : ''}`}
-                onClick={handleEarnClick}
+                className="edx-promo-btn"
+                onClick={handleContactClick}
               >
-                {isCourseInCart ? 'Go to Cart' : 'Earn a certificate'}
+                Contact to buy
               </button>
             </div>
 
@@ -161,17 +153,14 @@ const CourseDetails = () => {
             </div>
 
             <div className="edx-pricing">
-              {course.originalPrice && (
-                <span className="edx-price-original">${course.originalPrice} USD</span>
-              )}
-              <span>${course.price.toFixed(2)}</span>
+              <span style={{ fontSize: '1rem', color: '#555' }}>Price available upon request</span>
             </div>
 
             <button 
-              className={`edx-earn-btn edx-sidebar-btn ${isCourseInCart ? 'in-cart' : ''}`}
-              onClick={handleEarnClick}
+              className="edx-earn-btn edx-sidebar-btn"
+              onClick={handleContactClick}
             >
-              {isCourseInCart ? 'Go to Cart' : 'Earn a certificate'}
+              Contact to buy
             </button>
           </div>
 
@@ -198,6 +187,43 @@ const CourseDetails = () => {
           </div>
         </div>
       </div>
+      
+      {/* Contact Modal Popup */}
+      {showContactModal && (
+        <div className="contact-modal-overlay" onClick={() => setShowContactModal(false)}>
+          <div className="contact-modal-content" onClick={(e) => e.stopPropagation()}>
+            <button className="contact-modal-close" onClick={() => setShowContactModal(false)}><X size={24} /></button>
+            <h2 className="contact-modal-title">Contact Us to Enroll</h2>
+            <p className="contact-modal-subtitle">Ready to advance your career? Get in touch with our admissions team to secure your spot in <strong>{course.title}</strong>.</p>
+            
+            <div className="contact-options-grid">
+              <a href="tel:+918448303836" className="contact-option-btn">
+                <div className="contact-option-icon">📞</div>
+                <div className="contact-option-text">
+                  <span>Call Us</span>
+                  <strong>+91 8448303836</strong>
+                </div>
+              </a>
+              
+              <a href="https://wa.me/918448303836" target="_blank" rel="noopener noreferrer" className="contact-option-btn whatsapp-btn">
+                <div className="contact-option-icon">💬</div>
+                <div className="contact-option-text">
+                  <span>WhatsApp</span>
+                  <strong>Message Us</strong>
+                </div>
+              </a>
+              
+              <a href="mailto:info@feynapps.com" className="contact-option-btn email-btn">
+                <div className="contact-option-icon">✉️</div>
+                <div className="contact-option-text">
+                  <span>Email Us</span>
+                  <strong>info@feynapps.com</strong>
+                </div>
+              </a>
+            </div>
+          </div>
+        </div>
+      )}
       
     </div>
   );

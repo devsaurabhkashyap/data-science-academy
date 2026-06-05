@@ -4,7 +4,6 @@ import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
 import CourseDetails from './pages/CourseDetails';
-import Cart from './pages/Cart';
 import Trainings from './pages/Trainings';
 import Certifications from './pages/Certifications';
 import Login from './pages/Login';
@@ -12,33 +11,29 @@ import Signup from './pages/Signup';
 import Dashboard from './pages/Dashboard';
 import SearchResults from './pages/SearchResults';
 import Footer from './components/Footer';
-import { CartProvider } from './context/CartContext';
 import './index.css';
 
 function App() {
   return (
-    <CartProvider>
-      <Router>
-        <div className="page-wrapper">
-          <Navbar />
-          <main className="main-content">
-            <Routes>
-              <Route path="/" element={<Home />} />
-              <Route path="/courses" element={<Courses />} />
-              <Route path="/course/:courseId" element={<CourseDetails />} />
-              <Route path="/cart" element={<Cart />} />
-              <Route path="/trainings" element={<Trainings />} />
-              <Route path="/certifications" element={<Certifications />} />
-              <Route path="/login" element={<Login />} />
-              <Route path="/signup" element={<Signup />} />
-              <Route path="/dashboard" element={<Dashboard />} />
-              <Route path="/search" element={<SearchResults />} />
-            </Routes>
-          </main>
-          <Footer />
-        </div>
-      </Router>
-    </CartProvider>
+    <Router>
+      <div className="page-wrapper">
+        <Navbar />
+        <main className="main-content">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/courses" element={<Courses />} />
+            <Route path="/course/:courseId" element={<CourseDetails />} />
+            <Route path="/trainings" element={<Trainings />} />
+            <Route path="/certifications" element={<Certifications />} />
+            <Route path="/login" element={<Login />} />
+            <Route path="/signup" element={<Signup />} />
+            <Route path="/dashboard" element={<Dashboard />} />
+            <Route path="/search" element={<SearchResults />} />
+          </Routes>
+        </main>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

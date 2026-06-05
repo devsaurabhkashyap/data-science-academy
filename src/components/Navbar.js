@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
-import { Search, Menu, X, ChevronRight, ShoppingCart } from 'lucide-react';
-import { useCart } from '../context/CartContext';
+import { Search, Menu, X, ChevronRight } from 'lucide-react';
 import './Navbar.css';
 
 const Navbar = () => {
@@ -9,7 +8,6 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
-  const { cartItems } = useCart();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -39,15 +37,6 @@ const Navbar = () => {
           <div className="nav-right">
             {!isMenuOpen && !isSearchOpen && (
               <>
-                <button className="nav-action desktop-cart" onClick={() => navigate('/cart')}>
-                  <div style={{ position: 'relative' }}>
-                    <ShoppingCart className="icon" size={20} />
-                    {cartItems.length > 0 && (
-                      <span className="cart-badge">{cartItems.length}</span>
-                    )}
-                  </div>
-                  <span>Cart</span>
-                </button>
                 <button className="nav-action" onClick={() => setIsSearchOpen(true)}>
                   <Search className="icon" size={20} />
                   <span>Search</span>
@@ -117,29 +106,6 @@ const Navbar = () => {
               <li><Link to="/#web-management" onClick={() => setIsMenuOpen(false)}>Web Services</Link></li>
               <li><Link to="/events" onClick={() => setIsMenuOpen(false)}>Events</Link></li>
               <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-              <li className="mobile-cart" style={{ marginTop: '2rem' }}>
-                <button 
-                  onClick={() => { setIsMenuOpen(false); navigate('/cart'); }}
-                  style={{ 
-                    backgroundColor: 'var(--primary-color)', 
-                    color: 'white',
-                    border: 'none', 
-                    borderRadius: '8px',
-                    font: 'inherit', 
-                    cursor: 'pointer', 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    justifyContent: 'center',
-                    gap: '10px', 
-                    padding: '1rem',
-                    width: '100%',
-                    fontWeight: 'bold',
-                    fontSize: '1.1rem'
-                  }}
-                >
-                  <ShoppingCart size={24} /> View Shopping Cart {cartItems.length > 0 && `(${cartItems.length})`}
-                </button>
-              </li>
             </ul>
           </div>
           <div className="menu-right">
