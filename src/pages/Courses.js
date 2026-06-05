@@ -96,7 +96,7 @@ const Courses = () => {
         {/* Section Header */}
         <div className="edx-section-header">
           <h2 className="edx-section-title">Programs</h2>
-          <a href="#" className="edx-show-all">Show (621) {'>'}</a>
+          <button className="edx-show-all">Show (621) {'>'}</button>
         </div>
 
         {/* Course Grid */}
