@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import { List, Clock, CheckCircle, X } from 'lucide-react';
+import { List, Clock, CheckCircle, X, ChevronDown } from 'lucide-react';
 import './Courses.css';
 
 export const courseCatalog = [
@@ -36,24 +36,83 @@ export const courseCatalog = [
   }
 ];
 
-const filters = [
-  'All filters',
-  'Subject',
-  'Skills',
-  'Educator',
-  'Learning type',
-  'Course language',
-  'Level',
-  'Transl'
-];
+const filterOptions = {
+  'Subject': ['Data Science', 'Artificial Intelligence', 'Computer Science', 'Business'],
+  'Skills': ['Python', 'Machine Learning', 'Deep Learning', 'NLP'],
+  'Educator': ['Feynapps Academy', 'Harvard', 'MIT'],
+  'Learning type': ['Professional Certificate', 'Degree', 'Course'],
+  'Course language': ['English', 'Spanish', 'Hindi'],
+  'Level': ['Introductory level', 'Intermediate', 'Advanced']
+};
 
 const Courses = () => {
   const navigate = useNavigate();
   const [showChatBubble, setShowChatBubble] = useState(true);
-  const [activeFilter, setActiveFilter] = useState('All filters');
+  const [openDropdown, setOpenDropdown] = useState(null);
+  const [selectedFilters, setSelectedFilters] = useState({
+    'Subject': [],
+    'Skills': [],
+    'Educator': [],
+    'Learning type': [],
+    'Course language': [],
+    'Level': []
+  });
 
-  // Filter logic: if 'All filters' is selected, show everything. Otherwise, hide it (since we only have 1 course).
-  const displayedCourses = activeFilter === 'All filters' ? courseCatalog : [];
+  const toggleDropdown = (filterName) => {
+    if (openDropdown === filterName) {
+      setOpenDropdown(null);
+    } else {
+      setOpenDropdown(filterName);
+    }
+  };
+
+  const handleFilterChange = (category, option) => {
+    setSelectedFilters(prev => {
+      const currentSelections = prev[category];
+      if (currentSelections.includes(option)) {
+        return { ...prev, [category]: currentSelections.filter(item => item !== option) };
+      } else {
+        return { ...prev, [category]: [...currentSelections, option] };
+      }
+    });
+  };
+
+  const clearAllFilters = () => {
+    setSelectedFilters({
+      'Subject': [],
+      'Skills': [],
+      'Educator': [],
+      'Learning type': [],
+      'Course language': [],
+      'Level': []
+    });
+    setOpenDropdown(null);
+  };
+
+  // Real Filter logic
+  const displayedCourses = courseCatalog.filter(course => {
+    // Subject filter
+    if (selectedFilters['Subject'].length > 0) {
+      // Allow if any selected subject matches the course title loosely
+      const matchesSubject = selectedFilters['Subject'].some(sub => course.title.toLowerCase().includes(sub.toLowerCase()));
+      if (!matchesSubject) return false;
+    }
+    // Educator filter
+    if (selectedFilters['Educator'].length > 0) {
+      if (!selectedFilters['Educator'].includes(course.university)) return false;
+    }
+    // Level filter
+    if (selectedFilters['Level'].length > 0) {
+      if (!selectedFilters['Level'].includes(course.level)) return false;
+    }
+    // Learning type filter
+    if (selectedFilters['Learning type'].length > 0) {
+      if (!selectedFilters['Learning type'].includes(course.programType)) return false;
+    }
+    return true; // If no filters exclude it, keep it
+  });
+
+  const hasAnyFilter = Object.values(selectedFilters).some(arr => arr.length > 0);
 
   return (
     <div className="edx-courses-page">
@@ -64,14 +123,37 @@ const Courses = () => {
         
         {/* Filter Pills */}
         <div className="edx-filters-row">
-          {filters.map((filter, index) => (
-            <button 
-              key={index} 
-              className={`edx-filter-btn ${activeFilter === filter ? 'active' : ''}`}
-              onClick={() => setActiveFilter(filter)}
-            >
-              {filter} {index !== 0 && 'v'}
-            </button>
+          <button 
+            className={`edx-filter-btn ${!hasAnyFilter ? 'active' : ''}`}
+            onClick={clearAllFilters}
+          >
+            All filters
+          </button>
+          
+          {Object.keys(filterOptions).map((filterCategory) => (
+            <div key={filterCategory} className="edx-filter-dropdown-container" style={{ position: 'relative' }}>
+              <button 
+                className={`edx-filter-btn ${selectedFilters[filterCategory].length > 0 ? 'active' : ''}`}
+                onClick={() => toggleDropdown(filterCategory)}
+              >
+                {filterCategory} <ChevronDown size={14} style={{ marginLeft: '4px' }}/>
+              </button>
+              
+              {openDropdown === filterCategory && (
+                <div className="edx-dropdown-menu">
+                  {filterOptions[filterCategory].map(option => (
+                    <label key={option} className="edx-dropdown-item">
+                      <input 
+                        type="checkbox" 
+                        checked={selectedFilters[filterCategory].includes(option)}
+                        onChange={() => handleFilterChange(filterCategory, option)}
+                      />
+                      <span>{option}</span>
+                    </label>
+                  ))}
+                </div>
+              )}
+            </div>
           ))}
         </div>
 
