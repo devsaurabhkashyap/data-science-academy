@@ -178,9 +178,6 @@ const Courses = () => {
               {/* Hero Banner with superimposed logo */}
               <div className="edx-card-hero">
                 <img src={course.image} alt={course.title} className="edx-card-bg" />
-                <div className="edx-card-logo-wrapper">
-                  <img src={course.universityLogo} alt={course.university} className="edx-card-logo" />
-                </div>
               </div>
 
               {/* Content Body */}

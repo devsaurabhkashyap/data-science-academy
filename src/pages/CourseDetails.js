@@ -49,7 +49,6 @@ const CourseDetails = () => {
             
             {/* Primary White Card */}
             <div className="edx-details-card">
-              <img src={course.universityLogo} alt={course.university} className="edx-details-logo" />
               <div className="edx-details-image-gallery">
                 <img src="/course-img-1.png" alt="Data Science Course Header" className="edx-course-img" />
                 <img src="/course-img-2.png" alt="Machine Learning Office Lifestyle" className="edx-course-img" />
