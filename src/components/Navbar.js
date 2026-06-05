@@ -7,10 +7,9 @@ import './Navbar.css';
 const Navbar = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
-  const [isCartOpen, setIsCartOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
-  const { cartItems, removeFromCart, cartTotal } = useCart();
+  const { cartItems, removeFromCart, cartTotal, isCartOpen, setIsCartOpen } = useCart();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -163,12 +162,27 @@ const Navbar = () => {
               <li><Link to="/#web-management" onClick={() => setIsMenuOpen(false)}>Web Services</Link></li>
               <li><Link to="/events" onClick={() => setIsMenuOpen(false)}>Events</Link></li>
               <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
-              <li className="mobile-cart">
+              <li className="mobile-cart" style={{ marginTop: '2rem' }}>
                 <button 
                   onClick={() => { setIsMenuOpen(false); setIsCartOpen(true); }}
-                  style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px', padding: 0 }}
+                  style={{ 
+                    backgroundColor: 'var(--primary-color)', 
+                    color: 'white',
+                    border: 'none', 
+                    borderRadius: '8px',
+                    font: 'inherit', 
+                    cursor: 'pointer', 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'center',
+                    gap: '10px', 
+                    padding: '1rem',
+                    width: '100%',
+                    fontWeight: 'bold',
+                    fontSize: '1.1rem'
+                  }}
                 >
-                  <ShoppingCart size={28} /> Cart {cartItems.length > 0 && `(${cartItems.length})`}
+                  <ShoppingCart size={24} /> View Shopping Cart {cartItems.length > 0 && `(${cartItems.length})`}
                 </button>
               </li>
             </ul>
