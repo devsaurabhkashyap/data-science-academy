@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { useParams, Link, useNavigate } from 'react-router-dom';
 import { useCart } from '../context/CartContext';
 import { courseCatalog } from './Courses';
-import { MonitorPlay, User, Clock, CheckCircle, X } from 'lucide-react';
+import { MonitorPlay, User, Clock, CheckCircle, X, CheckCircle2 } from 'lucide-react';
 import './CourseDetails.css';
 import './Courses.css'; // Reusing chatbot CSS from here
 
@@ -98,6 +98,35 @@ const CourseDetails = () => {
                   <p className="edx-meta-col-desc">{course.effort}</p>
                 </div>
               </div>
+            </div>
+
+            {/* What You'll Learn Section */}
+            {course.whatYouWillLearn && course.whatYouWillLearn.length > 0 && (
+              <div className="edx-what-you-learn">
+                <h2>What you'll learn</h2>
+                <div className="edx-learn-grid">
+                  {course.whatYouWillLearn.map((item, index) => (
+                    <div key={index} className="edx-learn-item">
+                      <CheckCircle2 size={18} className="edx-learn-icon" />
+                      <span>{item}</span>
+                    </div>
+                  ))}
+                </div>
+              </div>
+            )}
+
+            {/* Promo Banner */}
+            <div className="edx-promo-banner">
+              <div className="edx-promo-content">
+                <h2>Stay ahead of the curve with 30% off</h2>
+                <p>Save on new skills with up to 30% off programs. Use code TAKE30OFFEDX26 at checkout. Offer ends Jun 30, 2026. ⓘ</p>
+              </div>
+              <button 
+                className={`edx-promo-btn ${isCourseInCart ? 'in-cart' : ''}`}
+                onClick={handleEarnClick}
+              >
+                {isCourseInCart ? 'Go to Cart' : 'Earn a certificate'}
+              </button>
             </div>
 
           </div>

@@ -182,6 +182,86 @@
   line-height: 1.4;
 }
 
+/* What You'll Learn Section */
+.edx-what-you-learn {
+  margin-top: 2rem;
+  padding: 0 1rem;
+}
+
+.edx-what-you-learn h2 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: #00262b;
+  margin-bottom: 1.5rem;
+}
+
+.edx-learn-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.5rem 3rem;
+}
+
+.edx-learn-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  font-size: 0.95rem;
+  color: #333;
+  line-height: 1.5;
+}
+
+.edx-learn-icon {
+  flex-shrink: 0;
+  color: #00262b;
+  margin-top: 0.15rem;
+}
+
+/* Promo Banner */
+.edx-promo-banner {
+  margin-top: 3rem;
+  background-color: #00262b;
+  border-radius: 8px;
+  padding: 2.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  color: #ffffff;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.edx-promo-content h2 {
+  font-size: 2rem;
+  font-weight: 800;
+  margin: 0 0 1rem 0;
+  line-height: 1.2;
+}
+
+.edx-promo-content p {
+  font-size: 0.85rem;
+  color: #e0e0e0;
+  margin: 0;
+  max-width: 500px;
+  line-height: 1.5;
+}
+
+.edx-promo-btn {
+  background-color: #d13b00;
+  color: #ffffff;
+  border: none;
+  border-radius: 20px;
+  padding: 0.75rem 2rem;
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  flex-shrink: 0;
+  margin-left: 2rem;
+}
+
+.edx-promo-btn:hover {
+  background-color: #b53200;
+}
+
 /* Sidebar Panel */
 .edx-sidebar-panel {
   flex: 0 0 380px;
@@ -310,5 +390,16 @@
   }
   .edx-details-title {
     font-size: 2.2rem;
+  }
+  .edx-learn-grid {
+    grid-template-columns: 1fr;
+  }
+  .edx-promo-banner {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1.5rem;
+  }
+  .edx-promo-btn {
+    margin-left: 0;
   }
 }

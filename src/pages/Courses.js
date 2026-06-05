@@ -23,6 +23,17 @@ export const courseCatalog = [
       'Risk and Return',
       'Valuation Methodologies'
     ],
+    whatYouWillLearn: [
+      'Understand both the sound theoretical principles of finance, and the practical environment in which financial decisions are made.',
+      'How to use the free cash flow method for firm evaluation.',
+      'Apply frameworks for valuation and discounting.',
+      'Value stocks and bonds.',
+      'Compute the return on any project.',
+      'Value a firm by projecting cash flows and calculating residual value.',
+      'How to make investment decisions for corporations.',
+      'Understand the effect of capital structure on the risk of the equity and debt of a firm.',
+      'Measure risk and estimate the expected return of an asset based on its risk.'
+    ],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     description: 'Learn the core concepts of data science, machine learning, and build real-world AI projects.',
     instructor: 'Dr. Alan Turing'
@@ -45,6 +56,11 @@ export const courseCatalog = [
       'Data Structures',
       'Algorithms',
       'Web Scraping'
+    ],
+    whatYouWillLearn: [
+      'Write scripts for general productivity tasks Read and comprehend Python code Gain knowledge in regard to general programming concepts.',
+      'Use variables to store, retrieve and calculate information.',
+      'Utilize core programming tools such as functions and loops.'
     ],
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop',
     description: 'Master React, Node.js, and database design. Go from zero to deploying robust web apps.',
@@ -69,6 +85,12 @@ export const courseCatalog = [
       'Natural Language Processing',
       'AI Ethics'
     ],
+    whatYouWillLearn: [
+      'Graph search algorithms.',
+      'Reinforcement learning.',
+      'Machine learning and artificial intelligence principles.',
+      'How to design intelligent systems.'
+    ],
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
     description: 'Learn AWS, Docker, and Kubernetes. Build scalable, fault-tolerant cloud architectures.',
     instructor: 'David Chen'
@@ -90,6 +112,11 @@ export const courseCatalog = [
       'AI Strategy for Executives',
       'Implementing AI in Operations',
       'Data-Driven Decision Making'
+    ],
+    whatYouWillLearn: [
+      'How to develop an AI strategy for your business.',
+      'Identify opportunities for AI implementation.',
+      'Understand the ethical implications of AI in business.'
     ],
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop',
     description: 'Bridge the gap between code and design. Learn Figma, accessibility, and modern UI principles.',
