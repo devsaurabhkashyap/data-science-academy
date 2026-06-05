@@ -13,7 +13,16 @@ export const courseCatalog = [
     courseCount: '3 courses',
     duration: '4 months to complete',
     level: 'Introductory level',
-    price: 999,
+    price: 607.50,
+    originalPrice: 675,
+    learnersEnrolled: '311,534',
+    effort: '3 - 4 hours per week',
+    curriculumList: [
+      'Introduction to Corporate Finance',
+      'Free Cash Flow Analysis',
+      'Risk and Return',
+      'Valuation Methodologies'
+    ],
     image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
     description: 'Learn the core concepts of data science, machine learning, and build real-world AI projects.',
     instructor: 'Dr. Alan Turing'
@@ -28,6 +37,15 @@ export const courseCatalog = [
     duration: '6 months to complete',
     level: 'Introductory level',
     price: 850,
+    originalPrice: 950,
+    learnersEnrolled: '142,890',
+    effort: '4 - 5 hours per week',
+    curriculumList: [
+      'Python Syntax & Semantics',
+      'Data Structures',
+      'Algorithms',
+      'Web Scraping'
+    ],
     image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop',
     description: 'Master React, Node.js, and database design. Go from zero to deploying robust web apps.',
     instructor: 'Sarah Jenkins'
@@ -42,6 +60,15 @@ export const courseCatalog = [
     duration: '5 months to complete',
     level: 'Introductory level',
     price: 1200,
+    originalPrice: 1500,
+    learnersEnrolled: '89,450',
+    effort: '5 - 7 hours per week',
+    curriculumList: [
+      'Machine Learning Models',
+      'Neural Networks',
+      'Natural Language Processing',
+      'AI Ethics'
+    ],
     image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
     description: 'Learn AWS, Docker, and Kubernetes. Build scalable, fault-tolerant cloud architectures.',
     instructor: 'David Chen'
@@ -56,6 +83,14 @@ export const courseCatalog = [
     duration: '8 weeks to complete',
     level: 'Introductory level',
     price: 600,
+    originalPrice: 750,
+    learnersEnrolled: '215,600',
+    effort: '2 - 3 hours per week',
+    curriculumList: [
+      'AI Strategy for Executives',
+      'Implementing AI in Operations',
+      'Data-Driven Decision Making'
+    ],
     image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop',
     description: 'Bridge the gap between code and design. Learn Figma, accessibility, and modern UI principles.',
     instructor: 'Elena Rossi'

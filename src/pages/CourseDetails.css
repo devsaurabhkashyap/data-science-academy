@@ -1,0 +1,314 @@
+/* CourseDetails.css - edX style layout */
+
+.edx-details-page {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  background-color: #f5f5f5;
+  min-height: 100vh;
+  padding-bottom: 4rem;
+}
+
+/* Sweeping Dark Green Background */
+.edx-details-hero-bg {
+  background: radial-gradient(circle at top right, #1d403a, #0d1a18);
+  position: absolute;
+  top: 100px; /* Below navbar */
+  left: 0;
+  width: 100%;
+  height: 600px;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.edx-details-hero-bg::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -20%;
+  width: 140%;
+  height: 100%;
+  background: radial-gradient(ellipse at 50% 120%, rgba(255,255,255,0.05) 0%, transparent 60%);
+  transform: rotate(-10deg);
+}
+
+.edx-details-container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 2rem;
+  padding-top: 120px; /* Account for navbar + some spacing */
+}
+
+/* Breadcrumbs */
+.edx-breadcrumbs {
+  color: #ffffff;
+  font-size: 0.9rem;
+  margin-bottom: 2rem;
+}
+
+.edx-breadcrumb-link {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.edx-breadcrumb-link:hover {
+  text-decoration: underline;
+}
+
+.edx-breadcrumb-separator {
+  margin: 0 0.5rem;
+  color: rgba(255,255,255,0.6);
+}
+
+.edx-breadcrumb-current {
+  font-weight: 600;
+}
+
+/* Two Column Layout */
+.edx-details-grid {
+  display: flex;
+  gap: 2rem;
+  align-items: flex-start;
+}
+
+/* Main Left Column */
+.edx-details-main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Main Cards */
+.edx-details-card {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2.5rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.edx-details-logo {
+  height: 50px;
+  margin-bottom: 2rem;
+}
+
+.edx-details-title {
+  font-size: 3rem;
+  font-weight: 800;
+  color: #00262b;
+  margin: 0 0 1rem 0;
+  line-height: 1.1;
+}
+
+.edx-details-subtitle {
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0 0 2rem 0;
+  font-weight: 600;
+}
+
+/* Red Earn Button */
+.edx-earn-btn {
+  background-color: #d13b00; /* EdX reddish orange */
+  color: #ffffff;
+  border: none;
+  border-radius: 4px;
+  padding: 1rem 2rem;
+  font-size: 1.1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background-color 0.2s;
+  display: inline-block;
+}
+
+.edx-earn-btn:hover {
+  background-color: #b53200;
+}
+
+.edx-earn-btn.in-cart {
+  background-color: #333;
+}
+
+.edx-earn-btn.in-cart:hover {
+  background-color: #111;
+}
+
+.edx-opt-in {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.edx-opt-in input[type="checkbox"] {
+  margin-top: 0.25rem;
+}
+
+/* Secondary Meta Strip */
+.edx-meta-strip {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+}
+
+.edx-meta-col {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+}
+
+.edx-meta-icon {
+  margin-top: 0.25rem;
+  color: #00262b;
+}
+
+.edx-meta-col-title {
+  font-weight: 700;
+  color: #00262b;
+  margin: 0 0 0.25rem 0;
+  font-size: 1.1rem;
+}
+
+.edx-meta-col-desc {
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+/* Sidebar Panel */
+.edx-sidebar-panel {
+  flex: 0 0 380px;
+  background-color: #f7f5ef; /* Light beige */
+  border-radius: 8px;
+  padding: 2rem;
+  box-shadow: 0 4px 20px rgba(0,0,0,0.15);
+  position: sticky;
+  top: 120px;
+}
+
+.edx-sidebar-header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #00262b;
+  margin-bottom: 1.5rem;
+}
+
+.edx-video-placeholder {
+  width: 100%;
+  height: 200px;
+  background-color: #000;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+}
+
+.edx-play-button {
+  width: 0;
+  height: 0;
+  border-top: 20px solid transparent;
+  border-left: 30px solid #ffffff;
+  border-bottom: 20px solid transparent;
+}
+
+.edx-enrolled-count {
+  font-size: 0.9rem;
+  color: #333;
+  margin-bottom: 1.5rem;
+}
+
+/* Green Curriculum Box */
+.edx-curriculum-box {
+  background-color: #274b41;
+  border-radius: 8px;
+  color: #ffffff;
+  overflow: hidden;
+  margin-bottom: 2rem;
+}
+
+.edx-curriculum-header {
+  padding: 1rem;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.edx-curriculum-body {
+  background-color: #ffffff;
+  padding: 1.5rem;
+}
+
+.edx-curriculum-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  color: #00262b;
+  font-weight: 700;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  margin-bottom: 1rem;
+}
+
+.edx-curriculum-show {
+  color: #555;
+  text-decoration: underline;
+  font-size: 0.9rem;
+  cursor: pointer;
+  background: none;
+  border: none;
+  padding: 0;
+  font-family: inherit;
+}
+
+.edx-pricing {
+  text-align: center;
+  margin-bottom: 1.5rem;
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: #00262b;
+}
+
+.edx-price-original {
+  color: #888;
+  text-decoration: line-through;
+  margin-right: 0.5rem;
+  font-size: 1rem;
+}
+
+.edx-sidebar-btn {
+  width: 100%;
+}
+
+@media (max-width: 992px) {
+  .edx-details-grid {
+    flex-direction: column;
+  }
+  .edx-sidebar-panel {
+    flex: none;
+    width: 100%;
+    position: static;
+  }
+  .edx-details-hero-bg {
+    height: 700px;
+  }
+}
+
+@media (max-width: 768px) {
+  .edx-meta-strip {
+    grid-template-columns: 1fr;
+  }
+  .edx-details-title {
+    font-size: 2.2rem;
+  }
+}
