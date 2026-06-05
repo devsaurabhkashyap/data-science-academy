@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { useParams, Link, useNavigate } from 'react-router-dom';
+import { useParams, Link } from 'react-router-dom';
 import { courseCatalog } from './Courses';
 import { MonitorPlay, User, Clock, CheckCircle, X, CheckCircle2 } from 'lucide-react';
 import './CourseDetails.css';
@@ -7,7 +7,6 @@ import './Courses.css'; // Reusing chatbot CSS from here
 
 const CourseDetails = () => {
   const { courseId } = useParams();
-  const navigate = useNavigate();
   const [showChatBubble, setShowChatBubble] = useState(true);
   const [showContactModal, setShowContactModal] = useState(false);
   
