@@ -113,7 +113,7 @@ const Navbar = () => {
         <div className="menu-content">
           <div className="menu-left">
             <ul className="main-links">
-              <li><Link to="/courses" className="active" onClick={() => setIsMenuOpen(false)}>Academy</Link></li>
+              <li><Link to="/courses" onClick={() => setIsMenuOpen(false)}>Academy</Link></li>
               <li><Link to="/#web-management" onClick={() => setIsMenuOpen(false)}>Web Services</Link></li>
               <li><Link to="/events" onClick={() => setIsMenuOpen(false)}>Events</Link></li>
               <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
