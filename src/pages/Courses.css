@@ -1,0 +1,304 @@
+/* Courses.css - edX style layout */
+
+.edx-courses-page {
+  padding: 8rem 2rem 4rem 2rem;
+  background-color: #ffffff;
+  min-height: 100vh;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+}
+
+.edx-container {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.edx-results-header {
+  font-size: 2rem;
+  font-weight: 700;
+  color: #111;
+  margin-bottom: 1.5rem;
+}
+
+/* Filters */
+.edx-filters-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-bottom: 3rem;
+}
+
+.edx-filter-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  background-color: #ffffff;
+  border: 1px solid #707070;
+  border-radius: 20px;
+  padding: 0.5rem 1rem;
+  font-size: 0.95rem;
+  color: #111;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.edx-filter-btn:hover {
+  background-color: #f5f5f5;
+  border-color: #111;
+}
+
+.edx-filter-btn.active {
+  background-color: #e6f3ff;
+  border-color: #0056D2;
+  color: #0056D2;
+}
+
+/* Section Header */
+.edx-section-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1.5rem;
+}
+
+.edx-section-title {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0;
+}
+
+.edx-show-all {
+  color: #111;
+  text-decoration: none;
+  font-weight: 600;
+  font-size: 0.95rem;
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+}
+
+.edx-show-all:hover {
+  text-decoration: underline;
+}
+
+/* Course Grid */
+.edx-course-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 1.5rem;
+}
+
+/* Course Card */
+.edx-course-card {
+  display: flex;
+  flex-direction: column;
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  overflow: hidden;
+  cursor: pointer;
+  text-decoration: none;
+  color: inherit;
+  transition: box-shadow 0.2s ease, transform 0.2s ease;
+  height: 100%;
+}
+
+.edx-course-card:hover {
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.edx-card-type {
+  background-color: #f5f5f5;
+  padding: 0.75rem 1rem;
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: #00262b;
+  border-bottom: 1px solid #dcdcdc;
+}
+
+.edx-card-hero {
+  position: relative;
+  height: 140px;
+  width: 100%;
+}
+
+.edx-card-bg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.edx-card-logo-wrapper {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #ffffff;
+  padding: 0.5rem;
+  border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 120px;
+  height: 60px;
+}
+
+.edx-card-logo {
+  max-width: 100%;
+  max-height: 100%;
+  object-fit: contain;
+}
+
+.edx-card-content {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.edx-card-title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: #111;
+  margin: 0 0 0.5rem 0;
+  line-height: 1.3;
+}
+
+.edx-card-subtitle {
+  font-size: 1rem;
+  color: #555;
+  margin: 0 0 1.5rem 0;
+}
+
+.edx-card-meta {
+  margin-top: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.edx-meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.9rem;
+  color: #333;
+}
+
+/* Chatbot Widget */
+.edx-chatbot-widget {
+  position: fixed;
+  bottom: 2rem;
+  right: 2rem;
+  z-index: 1000;
+  display: flex;
+  align-items: flex-end;
+  gap: 1rem;
+}
+
+.edx-chatbot-bubble {
+  background-color: #ffffff;
+  border: 1px solid #dcdcdc;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.15);
+  font-size: 0.9rem;
+  color: #111;
+  position: relative;
+  max-width: 250px;
+}
+
+.edx-chatbot-bubble::after {
+  content: '';
+  position: absolute;
+  right: -10px;
+  bottom: 20px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #ffffff;
+  display: block;
+  width: 0;
+}
+
+.edx-chatbot-bubble::before {
+  content: '';
+  position: absolute;
+  right: -11px;
+  bottom: 20px;
+  border-width: 10px 0 10px 10px;
+  border-style: solid;
+  border-color: transparent transparent transparent #dcdcdc;
+  display: block;
+  width: 0;
+}
+
+.edx-bubble-close {
+  position: absolute;
+  top: 0.5rem;
+  right: 0.5rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: #777;
+  font-size: 1rem;
+}
+
+.edx-chatbot-icon {
+  width: 60px;
+  height: 60px;
+  background-color: #00262b;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+  cursor: pointer;
+  position: relative;
+}
+
+/* Graduation cap mockup */
+.edx-chatbot-icon::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  width: 40px;
+  height: 20px;
+  background-color: #111;
+  border-radius: 2px;
+  transform: skew(-20deg);
+}
+
+.edx-chatbot-face {
+  width: 40px;
+  height: 40px;
+  background-color: #4CAF50;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden;
+}
+
+.edx-chatbot-eyes {
+  position: absolute;
+  top: 30%;
+  left: 20%;
+  display: flex;
+  gap: 10px;
+}
+
+.edx-chatbot-eye {
+  width: 6px;
+  height: 6px;
+  background-color: white;
+  border-radius: 50%;
+}
+
+@media (max-width: 768px) {
+  .edx-courses-page {
+    padding: 6rem 1rem 3rem 1rem;
+  }
+  .edx-course-grid {
+    grid-template-columns: 1fr;
+  }
+}

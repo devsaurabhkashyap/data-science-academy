@@ -1,141 +1,165 @@
-import React from 'react';
-import { useCart } from '../context/CartContext';
+import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';
-import './PageStyles.css';
+import { List, Clock, CheckCircle, X } from 'lucide-react';
+import './Courses.css';
 
 export const courseCatalog = [
   {
     id: 'c1',
-    title: 'Advanced Data Science Masterclass',
-    description: 'Learn the core concepts of data science, machine learning, and build real-world AI projects.',
+    programType: 'Professional Certificate',
+    title: 'Corporate Finance',
+    university: 'Columbia University',
+    universityLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/6/69/Columbia_University_logo.svg/512px-Columbia_University_logo.svg.png',
+    courseCount: '3 courses',
+    duration: '4 months to complete',
+    level: 'Introductory level',
     price: 999,
-    duration: '6 Months',
-    instructor: 'Dr. Alan Turing',
-    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    description: 'Learn the core concepts of data science, machine learning, and build real-world AI projects.',
+    instructor: 'Dr. Alan Turing'
   },
   {
     id: 'c2',
-    title: 'Full-Stack Web Development Bootcamp',
-    description: 'Master React, Node.js, and database design. Go from zero to deploying robust web apps.',
+    programType: 'Professional Certificate',
+    title: 'Computer Science for Python Programming',
+    university: 'Harvard University',
+    universityLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/512px-Harvard_University_logo.svg.png',
+    courseCount: '2 courses',
+    duration: '6 months to complete',
+    level: 'Introductory level',
     price: 850,
-    duration: '4 Months',
-    instructor: 'Sarah Jenkins',
-    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1498050108023-c5249f4df085?q=80&w=2072&auto=format&fit=crop',
+    description: 'Master React, Node.js, and database design. Go from zero to deploying robust web apps.',
+    instructor: 'Sarah Jenkins'
   },
   {
     id: 'c3',
-    title: 'Cloud Infrastructure & DevOps',
-    description: 'Learn AWS, Docker, and Kubernetes. Build scalable, fault-tolerant cloud architectures.',
+    programType: 'Professional Certificate',
+    title: 'Computer Science for Artificial Intelligence',
+    university: 'Harvard University',
+    universityLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/7/70/Harvard_University_logo.svg/512px-Harvard_University_logo.svg.png',
+    courseCount: '2 courses',
+    duration: '5 months to complete',
+    level: 'Introductory level',
     price: 1200,
-    duration: '5 Months',
-    instructor: 'David Chen',
-    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+    description: 'Learn AWS, Docker, and Kubernetes. Build scalable, fault-tolerant cloud architectures.',
+    instructor: 'David Chen'
   },
   {
     id: 'c4',
-    title: 'UI/UX Design for Engineers',
-    description: 'Bridge the gap between code and design. Learn Figma, accessibility, and modern UI principles.',
+    programType: 'Professional Certificate',
+    title: 'AI for Business',
+    university: 'Microsoft',
+    universityLogo: 'https://upload.wikimedia.org/wikipedia/commons/thumb/9/96/Microsoft_logo_%282012%29.svg/512px-Microsoft_logo_%282012%29.svg.png',
+    courseCount: '7 courses',
+    duration: '8 weeks to complete',
+    level: 'Introductory level',
     price: 600,
-    duration: '3 Months',
-    instructor: 'Elena Rossi',
-    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop'
+    image: 'https://images.unsplash.com/photo-1561070791-2526d30994b5?q=80&w=2000&auto=format&fit=crop',
+    description: 'Bridge the gap between code and design. Learn Figma, accessibility, and modern UI principles.',
+    instructor: 'Elena Rossi'
   }
 ];
 
-const Courses = () => {
-  const { addToCart, cartItems } = useCart();
-  const navigate = useNavigate();
+const filters = [
+  'All filters',
+  'Subject',
+  'Skills',
+  'Educator',
+  'Learning type',
+  'Course language',
+  'Level',
+  'Transl'
+];
 
-  const isCourseInCart = (courseId) => {
-    return cartItems.some(item => item.id === courseId);
-  };
+const Courses = () => {
+  const navigate = useNavigate();
+  const [showChatBubble, setShowChatBubble] = useState(true);
 
   return (
-    <div className="page-container" style={{ padding: '6rem 2rem' }}>
-      <div className="container">
-        <h1 className="page-title text-gradient" style={{ textAlign: 'center', marginBottom: '3rem' }}>Feynapps Academy</h1>
+    <div className="edx-courses-page">
+      <div className="edx-container">
         
-        <div className="courses-grid" style={{
-          display: 'grid',
-          gridTemplateColumns: 'repeat(auto-fit, minmax(300px, 1fr))',
-          gap: '2rem'
-        }}>
-          {courseCatalog.map(course => (
-            <div key={course.id} className="glass-card course-details animate-fade-in" style={{
-              display: 'flex',
-              flexDirection: 'column',
-              justifyContent: 'space-between',
-              backgroundColor: '#fff',
-              border: '1px solid #eaeaea',
-              borderRadius: '12px',
-              boxShadow: '0 4px 15px rgba(0,0,0,0.05)',
-              overflow: 'hidden'
-            }}>
-              {/* Image Banner */}
-              <div style={{ height: '200px', width: '100%', overflow: 'hidden' }}>
-                <img src={course.image} alt={course.title} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
-              </div>
+        {/* Results Header */}
+        <h1 className="edx-results-header">4615 results</h1>
+        
+        {/* Filter Pills */}
+        <div className="edx-filters-row">
+          {filters.map((filter, index) => (
+            <button key={index} className={`edx-filter-btn ${index === 0 ? 'active' : ''}`}>
+              {filter} {index !== 0 && 'v'}
+            </button>
+          ))}
+        </div>
 
-              <div style={{ padding: '2rem' }}>
-                <h3 style={{ fontSize: '1.5rem', marginBottom: '1rem', color: '#111' }}>{course.title}</h3>
-                <p className="description" style={{ fontSize: '1rem', color: '#555', marginBottom: '1.5rem' }}>
-                  {course.description}
-                </p>
-                <div className="meta-info" style={{ marginBottom: '1.5rem', fontSize: '0.9rem', color: '#777' }}>
-                  <div style={{ marginBottom: '0.5rem' }}><strong>Duration:</strong> {course.duration}</div>
-                  <div><strong>Instructor:</strong> {course.instructor}</div>
-                </div>
+        {/* Section Header */}
+        <div className="edx-section-header">
+          <h2 className="edx-section-title">Programs</h2>
+          <a href="#" className="edx-show-all">Show (621) {'>'}</a>
+        </div>
+
+        {/* Course Grid */}
+        <div className="edx-course-grid">
+          {courseCatalog.map(course => (
+            <div key={course.id} className="edx-course-card" onClick={() => navigate(`/course/${course.id}`)}>
+              {/* Top Label */}
+              <div className="edx-card-type">
+                {course.programType}
               </div>
               
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginTop: 'auto', borderTop: '1px solid #eaeaea', padding: '1.5rem 2rem', backgroundColor: '#fafafa' }}>
-                <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
-                  ${course.price}
+              {/* Hero Banner with superimposed logo */}
+              <div className="edx-card-hero">
+                <img src={course.image} alt={course.title} className="edx-card-bg" />
+                <div className="edx-card-logo-wrapper">
+                  <img src={course.universityLogo} alt={course.university} className="edx-card-logo" />
                 </div>
-                <div style={{ display: 'flex', gap: '0.5rem' }}>
-                  <button 
-                    onClick={() => navigate(`/course/${course.id}`)}
-                    style={{
-                      padding: '0.75rem 1rem',
-                      backgroundColor: 'transparent',
-                      color: '#555',
-                      border: '1px solid #ccc',
-                      borderRadius: '8px',
-                      fontWeight: 'bold',
-                      cursor: 'pointer',
-                      transition: 'background-color 0.2s',
-                    }}
-                    onMouseOver={(e) => e.target.style.backgroundColor = '#eaeaea'}
-                    onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
-                  >
-                    View Course
-                  </button>
-                  <button 
-                    onClick={() => {
-                      if (isCourseInCart(course.id)) {
-                        navigate('/cart');
-                        window.scrollTo({ top: 0, behavior: 'smooth' });
-                      } else {
-                        addToCart(course);
-                      }
-                    }}
-                    style={{
-                      padding: '0.75rem 1.5rem',
-                      backgroundColor: isCourseInCart(course.id) ? '#333' : 'var(--primary-color)',
-                      color: 'white',
-                      border: 'none',
-                      borderRadius: '8px',
-                      fontWeight: 'bold',
-                      cursor: 'pointer',
-                      transition: 'opacity 0.2s, transform 0.2s',
-                      transform: isCourseInCart(course.id) ? 'scale(1.05)' : 'none'
-                    }}
-                  >
-                    {isCourseInCart(course.id) ? 'Go to Cart →' : 'Add to Cart'}
-                  </button>
+              </div>
+
+              {/* Content Body */}
+              <div className="edx-card-content">
+                <h3 className="edx-card-title">{course.title}</h3>
+                <p className="edx-card-subtitle">{course.university}</p>
+                
+                {/* Metadata List */}
+                <div className="edx-card-meta">
+                  <div className="edx-meta-item">
+                    <List size={16} color="#555" />
+                    <span>{course.courseCount}</span>
+                  </div>
+                  <div className="edx-meta-item">
+                    <Clock size={16} color="#555" />
+                    <span>{course.duration}</span>
+                  </div>
+                  <div className="edx-meta-item">
+                    <CheckCircle size={16} color="#555" />
+                    <span>{course.level}</span>
+                  </div>
                 </div>
               </div>
             </div>
           ))}
+        </div>
+
+      </div>
+
+      {/* Mock Chatbot Widget */}
+      <div className="edx-chatbot-widget">
+        {showChatBubble && (
+          <div className="edx-chatbot-bubble">
+            <button className="edx-bubble-close" onClick={() => setShowChatBubble(false)}>
+              <X size={14} />
+            </button>
+            Hi! 👋 I'm Xpert, an AI assistant to help you find things.
+          </div>
+        )}
+        <div className="edx-chatbot-icon" onClick={() => setShowChatBubble(!showChatBubble)}>
+          <div className="edx-chatbot-face">
+            <div className="edx-chatbot-eyes">
+              <div className="edx-chatbot-eye"></div>
+              <div className="edx-chatbot-eye"></div>
+            </div>
+          </div>
         </div>
       </div>
     </div>
