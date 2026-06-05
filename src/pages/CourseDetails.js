@@ -50,6 +50,10 @@ const CourseDetails = () => {
             {/* Primary White Card */}
             <div className="edx-details-card">
               <img src={course.universityLogo} alt={course.university} className="edx-details-logo" />
+              <div className="edx-details-image-gallery">
+                <img src="/course-img-1.png" alt="Data Science Course Header" className="edx-course-img" />
+                <img src="/course-img-2.png" alt="Machine Learning Office Lifestyle" className="edx-course-img" />
+              </div>
               <h1 className="edx-details-title">{course.title}</h1>
               <h3 className="edx-details-subtitle">{course.courseCount}, {course.duration.split(' ')[0]} months</h3>
               
@@ -129,9 +133,7 @@ const CourseDetails = () => {
               Earn a certificate
             </div>
 
-            <div className="edx-video-placeholder">
-              <div className="edx-play-button"></div>
-            </div>
+
 
             <div className="edx-enrolled-count">
               <strong>{course.learnersEnrolled}</strong> learners enrolled

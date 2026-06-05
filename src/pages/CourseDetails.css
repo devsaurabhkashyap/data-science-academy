@@ -92,6 +92,21 @@
   margin-bottom: 2rem;
 }
 
+.edx-details-image-gallery {
+  display: flex;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+
+.edx-course-img {
+  width: 100%;
+  max-width: 50%;
+  height: auto;
+  border-radius: 8px;
+  object-fit: cover;
+  box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
 .edx-details-title {
   font-size: 3rem;
   font-weight: 800;
@@ -399,26 +414,6 @@
   font-weight: 700;
   color: #00262b;
   margin-bottom: 1.5rem;
-}
-
-.edx-video-placeholder {
-  width: 100%;
-  height: 200px;
-  background-color: #000;
-  border-radius: 8px;
-  margin-bottom: 1rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-}
-
-.edx-play-button {
-  width: 0;
-  height: 0;
-  border-top: 20px solid transparent;
-  border-left: 30px solid #ffffff;
-  border-bottom: 20px solid transparent;
 }
 
 .edx-enrolled-count {
