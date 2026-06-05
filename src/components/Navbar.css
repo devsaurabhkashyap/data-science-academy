@@ -471,10 +471,10 @@
 
 @media (max-width: 768px) {
   .navbar {
-    height: 70px;
+    height: 80px;
   }
   .nav-logo-img {
-    height: 40px;
+    height: 60px;
   }
   .nav-announcement {
     display: none;
@@ -486,10 +486,10 @@
   .cart-overlay {
     width: 100%;
     right: 0;
-    top: 70px;
+    top: 80px;
   }
   .menu-overlay {
-    padding-top: 70px;
+    padding-top: 80px;
   }
   .nav-action {
     padding: 0 1rem;
@@ -499,7 +499,7 @@
     padding: 0 1rem;
   }
   .search-input-area {
-    height: 70px;
+    height: 80px;
   }
   .main-links {
     gap: 1rem;
