@@ -253,6 +253,10 @@
   }
 }
 
+.mobile-cart {
+  display: none;
+}
+
 /* Cart Overlay Dropdown */
 .cart-overlay {
   position: absolute;
@@ -478,6 +482,15 @@
   }
   .nav-announcement {
     display: none;
+  }
+  .desktop-cart {
+    display: none !important;
+  }
+  .mobile-cart {
+    display: block;
+    margin-top: 1rem;
+    padding-top: 1rem;
+    border-top: 1px solid rgba(255,255,255,0.2);
   }
   .search-overlay {
     width: 100%;

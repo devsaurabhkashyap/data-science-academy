@@ -40,7 +40,7 @@ const Navbar = () => {
           <div className="nav-right">
             {!isMenuOpen && !isSearchOpen && !isCartOpen && (
               <>
-                <button className="nav-action" onClick={() => setIsCartOpen(true)}>
+                <button className="nav-action desktop-cart" onClick={() => setIsCartOpen(true)}>
                   <div style={{ position: 'relative' }}>
                     <ShoppingCart className="icon" size={20} />
                     {cartItems.length > 0 && (
@@ -163,6 +163,14 @@ const Navbar = () => {
               <li><Link to="/#web-management" onClick={() => setIsMenuOpen(false)}>Web Services</Link></li>
               <li><Link to="/events" onClick={() => setIsMenuOpen(false)}>Events</Link></li>
               <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
+              <li className="mobile-cart">
+                <button 
+                  onClick={() => { setIsMenuOpen(false); setIsCartOpen(true); }}
+                  style={{ background: 'none', border: 'none', color: 'inherit', font: 'inherit', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: '10px', padding: 0 }}
+                >
+                  <ShoppingCart size={28} /> Cart {cartItems.length > 0 && `(${cartItems.length})`}
+                </button>
+              </li>
             </ul>
           </div>
           <div className="menu-right">
