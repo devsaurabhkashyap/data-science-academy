@@ -15,7 +15,7 @@ const ResearchListSection = () => {
     <section className="research-list-section" id="web-management">
       <div className="research-list-container" style={{ gridTemplateColumns: '1fr' }}>
         {researchData.map((item) => (
-          <div key={item.id} className="research-item" style={{ flexDirection: 'row', gap: '3rem', alignItems: 'center' }}>
+          <div key={item.id} className="research-item responsive-research-item" style={{ gap: '3rem', alignItems: 'center' }}>
             <div style={{ flex: 1 }}>
               <div className="research-col-title">
                 <h3 style={{ fontSize: '2.5rem', marginBottom: '1rem' }}>{item.title}</h3>

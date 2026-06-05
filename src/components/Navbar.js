@@ -9,7 +9,7 @@ const Navbar = () => {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const navigate = useNavigate();
-  const { cartItems, removeFromCart, cartTotal, isCartOpen, setIsCartOpen } = useCart();
+  const { cartItems } = useCart();
 
   const handleSearchSubmit = (e) => {
     e.preventDefault();
@@ -22,13 +22,13 @@ const Navbar = () => {
 
   return (
     <>
-      <nav className={`navbar ${(isMenuOpen || isSearchOpen || isCartOpen) ? 'menu-open' : ''}`}>
+      <nav className={`navbar ${(isMenuOpen || isSearchOpen) ? 'menu-open' : ''}`}>
         <div className="nav-container">
           <div className="logo-section">
-            <Link to="/" className="harvard-logo" onClick={() => { setIsMenuOpen(false); setIsSearchOpen(false); setIsCartOpen(false); }}>
+            <Link to="/" className="harvard-logo" onClick={() => { setIsMenuOpen(false); setIsSearchOpen(false); }}>
               <img src="/feynapps-logo.png?v=2" alt="Feynapps" className="nav-logo-img" />
             </Link>
-            {!isMenuOpen && !isSearchOpen && !isCartOpen && (
+            {!isMenuOpen && !isSearchOpen && (
               <div className="nav-announcement">
                 <span className="dot"></span>
                 <span>Join our next Web Development Masterclass!</span>
@@ -37,9 +37,9 @@ const Navbar = () => {
           </div>
 
           <div className="nav-right">
-            {!isMenuOpen && !isSearchOpen && !isCartOpen && (
+            {!isMenuOpen && !isSearchOpen && (
               <>
-                <button className="nav-action desktop-cart" onClick={() => setIsCartOpen(true)}>
+                <button className="nav-action desktop-cart" onClick={() => navigate('/cart')}>
                   <div style={{ position: 'relative' }}>
                     <ShoppingCart className="icon" size={20} />
                     {cartItems.length > 0 && (
@@ -69,18 +69,9 @@ const Navbar = () => {
             )}
 
             {isSearchOpen && (
-              <button className="nav-action" onClick={() => { setIsSearchOpen(false); setIsMenuOpen(true); setIsCartOpen(false); }}>
+              <button className="nav-action" onClick={() => { setIsSearchOpen(false); setIsMenuOpen(true); }}>
                 <Menu className="icon" size={20} />
                 <span>Menu</span>
-              </button>
-            )}
-
-            {isCartOpen && (
-              <button className="nav-action close-action" onClick={() => setIsCartOpen(false)}>
-                <span>Close</span>
-                <div className="close-circle">
-                  <X className="icon" size={16} />
-                </div>
               </button>
             )}
           </div>
@@ -114,43 +105,7 @@ const Navbar = () => {
           </div>
         )}
 
-        {/* Cart Overlay Dropdown */}
-        {isCartOpen && (
-          <div className="cart-overlay">
-            <div className="cart-header">
-              <h2>Your Cart</h2>
-            </div>
-            <div className="cart-items">
-              {cartItems.length === 0 ? (
-                <p className="empty-cart">Your cart is empty.</p>
-              ) : (
-                cartItems.map((item) => (
-                  <div key={item.id} className="cart-item">
-                    <div>
-                      <h4>{item.title}</h4>
-                      <p>${item.price}</p>
-                    </div>
-                    <button className="remove-btn" onClick={() => removeFromCart(item.id)}>Remove</button>
-                  </div>
-                ))
-              )}
-            </div>
-            {cartItems.length > 0 && (
-              <div className="cart-footer">
-                <div className="cart-total">
-                  <span>Total:</span>
-                  <span>${cartTotal}</span>
-                </div>
-                <button className="checkout-btn" onClick={() => {
-                  alert("Redirecting to third-party payment gateway...");
-                  setIsCartOpen(false);
-                }}>
-                  Proceed to Checkout
-                </button>
-              </div>
-            )}
-          </div>
-        )}
+        {/* Cart Overlay Dropdown removed */}
       </nav>
 
       {/* Full Screen Menu Overlay */}
@@ -164,7 +119,7 @@ const Navbar = () => {
               <li><Link to="/about" onClick={() => setIsMenuOpen(false)}>About Us</Link></li>
               <li className="mobile-cart" style={{ marginTop: '2rem' }}>
                 <button 
-                  onClick={() => { setIsMenuOpen(false); setIsCartOpen(true); }}
+                  onClick={() => { setIsMenuOpen(false); navigate('/cart'); }}
                   style={{ 
                     backgroundColor: 'var(--primary-color)', 
                     color: 'white',

@@ -3,6 +3,8 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
 import Home from './pages/Home';
 import Courses from './pages/Courses';
+import CourseDetails from './pages/CourseDetails';
+import Cart from './pages/Cart';
 import Trainings from './pages/Trainings';
 import Certifications from './pages/Certifications';
 import Login from './pages/Login';
@@ -23,6 +25,8 @@ function App() {
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/courses" element={<Courses />} />
+              <Route path="/course/:courseId" element={<CourseDetails />} />
+              <Route path="/cart" element={<Cart />} />
               <Route path="/trainings" element={<Trainings />} />
               <Route path="/certifications" element={<Certifications />} />
               <Route path="/login" element={<Login />} />

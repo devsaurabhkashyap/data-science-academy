@@ -1,8 +1,9 @@
 import React from 'react';
 import { useCart } from '../context/CartContext';
+import { useNavigate } from 'react-router-dom';
 import './PageStyles.css';
 
-const courseCatalog = [
+export const courseCatalog = [
   {
     id: 'c1',
     title: 'Advanced Data Science Masterclass',
@@ -42,7 +43,8 @@ const courseCatalog = [
 ];
 
 const Courses = () => {
-  const { addToCart, cartItems, setIsCartOpen } = useCart();
+  const { addToCart, cartItems } = useCart();
+  const navigate = useNavigate();
 
   const isCourseInCart = (courseId) => {
     return cartItems.some(item => item.id === courseId);
@@ -89,29 +91,48 @@ const Courses = () => {
                 <div style={{ fontSize: '1.5rem', fontWeight: 'bold', color: 'var(--primary-color)' }}>
                   ${course.price}
                 </div>
-                <button 
-                  onClick={() => {
-                    if (isCourseInCart(course.id)) {
-                      setIsCartOpen(true);
-                      window.scrollTo({ top: 0, behavior: 'smooth' });
-                    } else {
-                      addToCart(course);
-                    }
-                  }}
-                  style={{
-                    padding: '0.75rem 1.5rem',
-                    backgroundColor: isCourseInCart(course.id) ? '#333' : 'var(--primary-color)',
-                    color: 'white',
-                    border: 'none',
-                    borderRadius: '8px',
-                    fontWeight: 'bold',
-                    cursor: 'pointer',
-                    transition: 'opacity 0.2s, transform 0.2s',
-                    transform: isCourseInCart(course.id) ? 'scale(1.05)' : 'none'
-                  }}
-                >
-                  {isCourseInCart(course.id) ? 'Go to Cart →' : 'Add to Cart'}
-                </button>
+                <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <button 
+                    onClick={() => navigate(`/course/${course.id}`)}
+                    style={{
+                      padding: '0.75rem 1rem',
+                      backgroundColor: 'transparent',
+                      color: '#555',
+                      border: '1px solid #ccc',
+                      borderRadius: '8px',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                      transition: 'background-color 0.2s',
+                    }}
+                    onMouseOver={(e) => e.target.style.backgroundColor = '#eaeaea'}
+                    onMouseOut={(e) => e.target.style.backgroundColor = 'transparent'}
+                  >
+                    View Course
+                  </button>
+                  <button 
+                    onClick={() => {
+                      if (isCourseInCart(course.id)) {
+                        navigate('/cart');
+                        window.scrollTo({ top: 0, behavior: 'smooth' });
+                      } else {
+                        addToCart(course);
+                      }
+                    }}
+                    style={{
+                      padding: '0.75rem 1.5rem',
+                      backgroundColor: isCourseInCart(course.id) ? '#333' : 'var(--primary-color)',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '8px',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                      transition: 'opacity 0.2s, transform 0.2s',
+                      transform: isCourseInCart(course.id) ? 'scale(1.05)' : 'none'
+                    }}
+                  >
+                    {isCourseInCart(course.id) ? 'Go to Cart →' : 'Add to Cart'}
+                  </button>
+                </div>
               </div>
             </div>
           ))}

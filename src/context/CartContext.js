@@ -8,7 +8,6 @@ export const useCart = () => {
 
 export const CartProvider = ({ children }) => {
   const [cartItems, setCartItems] = useState([]);
-  const [isCartOpen, setIsCartOpen] = useState(false);
 
   const addToCart = (course) => {
     setCartItems((prevItems) => {
@@ -31,8 +30,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider value={{ 
-      cartItems, addToCart, removeFromCart, clearCart, cartTotal,
-      isCartOpen, setIsCartOpen 
+      cartItems, addToCart, removeFromCart, clearCart, cartTotal
     }}>
       {children}
     </CartContext.Provider>
